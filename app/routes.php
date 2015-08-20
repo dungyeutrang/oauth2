@@ -56,6 +56,7 @@ Route::post('oauth/authorize', ['as' => 'oauth.authorize.post','before' => ['csr
     if (Input::get('deny') !== null) {
         $redirectUri = Authorizer::authCodeRequestDeniedRedirectUri();
     }
+//    var_dump($redirectUri);die;
     return Redirect::to($redirectUri);
 }]);
 

@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'oauth2',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'ainopdiu',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

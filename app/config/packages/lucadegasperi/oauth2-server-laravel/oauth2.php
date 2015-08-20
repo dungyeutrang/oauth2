@@ -92,8 +92,8 @@ return [
                 ],
                 'authorization_code' => [
                     'class' => 'League\OAuth2\Server\Grant\AuthCodeGrant',
-                    'access_token_ttl' => 3600,
-                    'auth_token_ttl' => 3600,
+                    'access_token_ttl' => 86400,
+                    'auth_token_ttl' => 86400,
                 ],
             ],
             /*

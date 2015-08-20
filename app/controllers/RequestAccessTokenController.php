@@ -41,8 +41,8 @@ class RequestAccessTokenController extends \BaseController
      */
     public function store()
     {        
-//     return Response::json(Authorizer::issueAccessToken());
-        return Response::json(Authorizer::issueAuthCode());
+     return Response::json(Authorizer::issueAccessToken());
+//        return Response::json(Authorizer::issueAuthCode());
     }
     
     /**
