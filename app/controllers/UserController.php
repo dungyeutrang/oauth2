@@ -1,6 +1,8 @@
 <?php
 
-class PostController extends \BaseController {
+use Illuminate\Support\Facades\Auth;
+
+class UserController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,9 +11,21 @@ class PostController extends \BaseController {
 	 */
 	public function index()
 	{
-           echo "hello world";
+		//
 	}
 
+        public function login(){
+            
+            $param =$_GET;
+            if($_SERVER['REQUEST_METHOD']=="POST"){
+               $username =$_POST['username'];
+               $password =$_POST['password'];               
+               if(Auth::attempt(['username'=>$username,'password'=>$password])){
+                    return Redirect::guest(route('oauth.authorize',$param));
+               }
+            }
+            return View::make('user.login',['param'=>$param]);
+        }
 
 	/**
 	 * Show the form for creating a new resource.
@@ -81,6 +95,8 @@ class PostController extends \BaseController {
 	{
 		//
 	}
+        
+        
 
 
 }

@@ -78,20 +78,22 @@ return [
             'access_token_ttl' => 604800,
             // the code to run in order to verify the user's identity
             'callback' => function($username, $password) {
-
                 $credentials = [
                     'username' => $username,
                     'password' => $password,
                 ];
-
-
                 if (Auth::once($credentials)) {
-         
+
                     return Auth::user()->id;
                 } else {
                     return false;
                 }
             }
+                ],
+                'authorization_code' => [
+                    'class' => 'League\OAuth2\Server\Grant\AuthCodeGrant',
+                    'access_token_ttl' => 3600,
+                    'auth_token_ttl' => 3600,
                 ],
             ],
             /*
@@ -193,3 +195,4 @@ return [
              */
             'http_headers_only' => false,
         ];
+        
